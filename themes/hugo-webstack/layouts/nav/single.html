@@ -59,10 +59,17 @@
                         </li>
                     {{ else }}
                         <li>
-                            <a href="#{{ md5 .taxonomy }}" class="smooth">
-                               <i class="fa {{ .icon }} fa-fw"></i>
-                               <span class="title">{{ .taxonomy }}</span>
+                            {{ if (and .links (index .links 0).url) }}
+                            <a href="{{ (index .links 0).url }}" class="smooth">
+                                <i class="fa {{ .icon }} fa-fw"></i>
+                                <span class="title">{{ .taxonomy }}</span>
                             </a>
+                            {{ else }}
+                            <a href="#{{ md5 .taxonomy }}" class="smooth">
+                                <i class="fa {{ .icon }} fa-fw"></i>
+                                <span class="title">{{ .taxonomy }}</span>
+                            </a>
+                            {{ end }}
                         </li> 
                     {{ end }}                 
                     {{ end }}
