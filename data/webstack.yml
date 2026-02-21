@@ -1,5 +1,12 @@
 ---
 
+- taxonomy: 主页
+  icon: fa-home
+  links:
+    - title: 主页
+      url: /
+      description: 网站首页
+
 - taxonomy: 常用推荐
   icon: fa-star
   links: 
